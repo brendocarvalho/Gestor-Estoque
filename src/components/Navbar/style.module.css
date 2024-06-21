@@ -1,0 +1,25 @@
+.navContainer {
+  width: 100%;
+  padding: 0;
+}
+
+.navMenu {
+  padding: 1rem 0;
+}
+
+.button {
+  text-decoration: none;
+  padding: 0 1rem;
+}
+
+.button:focus {
+  border-bottom: 1px solid #fff;
+  border-width: 2px;
+  padding: 0 1rem 1.92rem 1rem;
+}
+
+.active {
+  border-bottom: 1px solid #fff;
+  border-width: 2px;
+  padding: 0 1rem 1.92rem 1rem;
+}

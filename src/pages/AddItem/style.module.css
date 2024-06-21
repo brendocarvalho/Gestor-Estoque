@@ -1,0 +1,138 @@
+/* 
+.containerItem {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContent {
+  display: flex;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 2rem;
+}
+
+.name,
+.price,
+.quantities,
+.categories {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.categories > select {
+  border: 1px solid #1c1a1d;
+  padding: 0.5rem;
+  background-color: #1c1a1d;
+  border-radius: 0.2rem;
+}
+
+input {
+  border: 1px solid #1c1a1d;
+  padding: 0.5rem;
+  background-color: #1c1a1d;
+  border-radius: 0.2rem;
+  width: 100%;
+}
+
+.description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.description > textarea {
+  width: 89%;
+  height: 7.3rem;
+  border: 1px solid #1c1a1d;
+  background-color: #1c1a1d;
+  border-radius: 0.2rem;
+  padding: .5rem;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  align-self: flex-start;
+}
+
+.containerItem {
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  gap: .5rem;
+  
+}
+
+input {
+  border: 1px solid #1c1a1d;
+  padding: 0.5rem;
+  background-color: #1c1a1d;
+  border-radius: 0.2rem;
+  width: 100%;
+}
+
+.categories > select {
+  border: 1px solid #1c1a1d;
+  padding: 0.5rem;
+  background-color: #1c1a1d;
+  border-radius: 0.2rem;
+}
+
+.description { 
+  width: 89%;
+  padding-bottom: 10px;
+}
+
+.description > textarea {
+  border: 1px solid #1c1a1d;
+  background-color: #1c1a1d;
+  border-radius: 0.2rem;
+  padding: .5rem;
+}
+
+button {
+  border: none;
+  
+}
