@@ -1,6 +1,7 @@
 .btn {
   padding: .3rem 1rem;
   text-decoration: none; 
+  cursor: pointer;
 }
 
 .openBtn {

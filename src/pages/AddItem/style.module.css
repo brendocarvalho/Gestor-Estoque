@@ -132,7 +132,25 @@ input {
   padding: .5rem;
 }
 
-button {
-  border: none;
-  
+.btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.openBtn {
+  background-color: #5BA7FD;
+  border-radius: .3rem;
+  color: #000;
+  border: 1px solid transparent;
+  transition: .3s ease-in;
+  cursor: pointer;
+  padding: .5rem 2rem;
+
+  &:hover {
+    border: 1px solid #5BA7FD;
+    background-color: transparent;
+    color: #fff;
+    transform: scale(1.1);
+  }
 }

@@ -3,8 +3,12 @@ import Navbar from "../../components/Navbar";
 import OpenButton from "../../components/Buttons/OpenButton";
 import UpdateButton from "../../components/Buttons/UpdateButton";
 import RemoveButton from "../../components/Buttons/RemoveButton";
+import { useContext } from "react";
+import ItemContext from "../../contexts/ItemContext";
 
 export default function Stock() {
+  const { item } = useContext(ItemContext);
+
   return (
     <section>
       <h1>Stock Items</h1>
@@ -22,38 +26,32 @@ export default function Stock() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Teste</td>
-              <td>8</td>
-              <td>Teste</td>
-              <td>
-                <div className={styles.btnControl}>
-                  <OpenButton textButton="Ver" />
-                  <UpdateButton textButton="Atualizar" />
-                  <RemoveButton textButton="Excluir" />
-                  {/* <Link to={`/items/1`} className={`${styles.btn} ${styles.open}`}>Ver</Link>
-                  <Link to="" className={`${styles.btn} ${styles.update}`}>Atualizar</Link>
-                  <Link to="" className={`${styles.btn} ${styles.remove}`}>Excluir</Link> */}
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Teste</td>
-              <td>8</td>
-              <td>Teste</td>
-              <td>
-                <div className={styles.btnControl}>
-                  <OpenButton link="items" textButton="Ver" id="1" />
-                  <UpdateButton textButton="Atualizar" link="editItem" id="1" />
-                  <RemoveButton textButton="Excluir" />
-                  {/* <Link to="" className={`${styles.btn} ${styles.open}`}>Ver</Link>
-                  <Link to="" className={`${styles.btn} ${styles.update}`}>Atualizar</Link>
-                  <Link to="" className={`${styles.btn} ${styles.remove}`}>Excluir</Link> */}
-                </div>
-              </td>
-            </tr>
+            {item.length > 0 ? (
+              item.map(currentItem => (
+                <>
+                  <tr key={currentItem.id}>
+                    <td>{currentItem.id}</td>
+                    <td>{currentItem.name}</td>
+                    <td>{currentItem.quantity}</td>
+                    <td>{currentItem.category}</td>
+                    <td>
+                      <div className={styles.btnControl}>
+                        <OpenButton textButton="Ver" />
+                        <UpdateButton textButton="Atualizar" />
+                        <RemoveButton textButton="Excluir" />
+                        {/* <Link to={`/items/1`} className={`${styles.btn} ${styles.open}`}>Ver</Link>
+                        <Link to="" className={`${styles.btn} ${styles.update}`}>Atualizar</Link>
+                        <Link to="" className={`${styles.btn} ${styles.remove}`}>Excluir</Link> */}
+                      </div>
+                    </td>
+                  </tr>
+                </>
+              ))
+            ) : (
+              <tr>
+                <td>Não há itens cadastrados!</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

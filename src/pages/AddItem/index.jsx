@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import OpenButton from "../../components/Buttons/OpenButton";
 import Navbar from "../../components/Navbar";
 import style from "./style.module.css";
 import ItemContext from "../../contexts/ItemContext";
@@ -19,7 +18,7 @@ export default function AddItem() {
 
   function handleClick (ev){
     ev.preventDefault()
-    if(!name || !quantity.trim() || !price.trim() || !category.trim() || description.trim()) {
+    if(!name.trim() || quantity <= 0 || !price.trim() || !category.trim() || !description.trim()) {
       alert("Preencha os campos corretamente.")
       return 
     }
@@ -27,6 +26,9 @@ export default function AddItem() {
     createItem(name, quantity, price, description, category)
     setName("")
     setQuantity("")
+    setPrice("")
+    setCategory("")
+    setDescription("")
   }
 
   return (
@@ -75,10 +77,10 @@ export default function AddItem() {
             onChange={(ev) => setCategory(ev.target.value)} // Atualiza o estado da categoria
           >
             <option disabled value="">Selecione uma categoria</option>
-            <option value="eletronicos">Eletrônicos</option>
-            <option value="vestuario">Vestuário</option>
-            <option value="alimentos">Alimentos</option>
-            <option value="jogos">Jogos</option>
+            <option value="Eletronicos">Eletrônicos</option>
+            <option value="Vestuario">Vestuário</option>
+            <option value="Alimentos">Alimentos</option>
+            <option value="Jogos">Jogos</option>
             {/* Adicione outras opções conforme necessário */}
           </select>
         </div>
@@ -92,10 +94,8 @@ export default function AddItem() {
             onChange={(ev) => setDescription(ev.target.value)}
           ></textarea>
         </div>
-        <div>
-          <button type="submit">
-            <OpenButton textButton="Salvar"/>
-          </button>
+        <div className={style.btn}>
+          <button type="submit" className={style.openBtn}>Salvar</button>
         </div>
       </form>
       

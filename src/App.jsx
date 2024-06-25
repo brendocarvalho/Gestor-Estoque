@@ -14,8 +14,8 @@ export default function App () {
   })
 
   const [name, setName] = useState("")
-  const [quantity, setQuantity] = useState(0)
-  const [price, setPrice] = useState(0)
+  const [quantity, setQuantity] = useState()
+  const [price, setPrice] = useState()
   const [category, setCategory] = useState("")
   const [description, setDescription] = useState("")
 

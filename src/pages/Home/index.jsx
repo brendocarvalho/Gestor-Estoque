@@ -12,8 +12,14 @@ export default function Home() {
       <h1 className={style.title}>Dashboard</h1>
       <main>
         <section className={style.dashContent}>
-          <div className={style.dash}>Diversidade de itens</div>
-          <div className={style.dash}>Inventário total</div>
+          <div className={style.dash}>
+             Diversidade de itens
+
+          </div>
+          <div className={style.dash}>
+            Inventário total
+            <p>{item.length}</p>
+          </div>
           <div className={style.dash}>Itens recentes</div>
           <div className={style.dash}>Itens acabando</div>
         </section>
@@ -41,7 +47,7 @@ export default function Home() {
             <table>
               <thead>
                 <tr>
-                  <th>Itens Recentes</th>
+                  <th>Itens acabando</th>
                   <th>Qtd</th>
                   <th>Ações</th>
                 </tr>

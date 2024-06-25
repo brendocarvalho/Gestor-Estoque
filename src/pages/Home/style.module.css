@@ -35,9 +35,15 @@ main {
   height: 145px;
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: start;
   padding: 1rem;
   box-shadow: 1px 1px 6px #1C1A1D;
+}
+
+.dash > p {
+  background-color: transparent;
+  font-size: 4rem;
 }
 
 table {
