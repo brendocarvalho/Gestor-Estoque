@@ -4,8 +4,17 @@ import { useContext } from "react";
 import ItemContext from "../../contexts/ItemContext";
 
 export default function Home() {
-  
-  const {item, setItem} = useContext(ItemContext)
+  const { item, setItem } = useContext(ItemContext);
+
+  const totalInventory = item.reduce((sum, item) => +sum + +item.quantity, 0);
+  const lowQuantity = item.filter(item => item.quantity < 10);
+  const today = new Date();
+  const limitDate = new Date();
+  limitDate.setDate(limitDate.getDate() - 10);
+  const recentItems = item.filter(item => {
+    const itemDate = new Date(item.newDateString);
+    return itemDate >= limitDate && itemDate <= today;
+  });
 
   return (
     <section className={style.container}>
@@ -13,15 +22,21 @@ export default function Home() {
       <main>
         <section className={style.dashContent}>
           <div className={style.dash}>
-             Diversidade de itens
-
+            Diversidade de itens
+            <p>{item.length}</p>
           </div>
           <div className={style.dash}>
             Inventário total
-            <p>{item.length}</p>
+            <p>{totalInventory}</p>
           </div>
-          <div className={style.dash}>Itens recentes</div>
-          <div className={style.dash}>Itens acabando</div>
+          <div className={style.dash}>
+            Itens recentes
+            <p>{recentItems.length}</p>
+          </div>
+          <div className={style.dash}>
+            Itens acabando
+            <p>{lowQuantity.length}</p>
+          </div>
         </section>
 
         <section className={style.row}>
@@ -34,12 +49,20 @@ export default function Home() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Teste</td>
-                  <td>
-                    <UpdateButton textButton={"Ver"} />
-                  </td>
-                </tr>
+                {recentItems.length > 0 ? (
+                  recentItems.map(item => (
+                    <tr key={item.id}>
+                      <td>{item.name}</td>
+                      <td>
+                        <UpdateButton textButton={"Ver"} />
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td>Não há itens cadastrados recentemente!</td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>
@@ -53,13 +76,21 @@ export default function Home() {
                 </tr>
               </thead>
               <tbody>
-                <tr className={style.rowEnd}>
-                  <td>Teste</td>
-                  <td>8</td>
-                  <td>
-                    <UpdateButton textButton={"Ver"} />
-                  </td>
-                </tr>
+                {lowQuantity.length > 0 ? (
+                  lowQuantity.map(item => (
+                    <tr key={item.id} className={style.rowEnd}>
+                      <td>{item.name}</td>
+                      <td>{item.quantity}</td>
+                      <td>
+                        <UpdateButton textButton={"Ver"} />
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td>Não há itens acabando :)</td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>

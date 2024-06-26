@@ -7,8 +7,10 @@ export default function AddItem() {
   const {item, setItem, name, setName, quantity, setQuantity, price, setPrice, category, setCategory, description, setDescription} = useContext(ItemContext)
 
   function createItem(name, quantity, price, description, category) {
+    const date = new Date();
+    const newDateString = date.toISOString();
     const id = Math.floor(Math.random() * 10000)
-    const newItem = {name, quantity, price, description, id, category}
+    const newItem = {name, quantity, price, description, id, category, newDateString}
     setItem((state) => {
       const newState = [newItem, ...state]
       localStorage.setItem("storageItem", JSON.stringify(newState))
