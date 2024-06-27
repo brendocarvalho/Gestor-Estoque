@@ -54,7 +54,7 @@ export default function Home() {
                     <tr key={item.id}>
                       <td>{item.name}</td>
                       <td>
-                        <UpdateButton textButton={"Ver"} />
+                        <UpdateButton textButton={"Ver"} link={"items"} id={item.id} />
                       </td>
                     </tr>
                   ))
@@ -66,6 +66,7 @@ export default function Home() {
               </tbody>
             </table>
           </div>
+
           <div className={style.rowTitle}>
             <table>
               <thead>
@@ -82,7 +83,7 @@ export default function Home() {
                       <td>{item.name}</td>
                       <td>{item.quantity}</td>
                       <td>
-                        <UpdateButton textButton={"Ver"} />
+                        <UpdateButton textButton={"Ver"} link={"items"} id={item.id} />
                       </td>
                     </tr>
                   ))

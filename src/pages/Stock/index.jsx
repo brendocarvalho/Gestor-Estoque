@@ -7,7 +7,7 @@ import { useContext } from "react";
 import ItemContext from "../../contexts/ItemContext";
 
 export default function Stock() {
-  const { item } = useContext(ItemContext);
+  const { item, removeItem } = useContext(ItemContext);
 
   return (
     <section>
@@ -36,12 +36,9 @@ export default function Stock() {
                     <td>{currentItem.category}</td>
                     <td>
                       <div className={styles.btnControl}>
-                        <OpenButton textButton="Ver" />
+                        <OpenButton textButton="Ver" link={"items"} id={currentItem.id}/>
                         <UpdateButton textButton="Atualizar" />
-                        <RemoveButton textButton="Excluir" />
-                        {/* <Link to={`/items/1`} className={`${styles.btn} ${styles.open}`}>Ver</Link>
-                        <Link to="" className={`${styles.btn} ${styles.update}`}>Atualizar</Link>
-                        <Link to="" className={`${styles.btn} ${styles.remove}`}>Excluir</Link> */}
+                        <RemoveButton textButton="Excluir" onClick={() => removeItem(currentItem.id)}/>
                       </div>
                     </td>
                   </tr>

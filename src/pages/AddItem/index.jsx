@@ -83,6 +83,7 @@ export default function AddItem() {
             <option value="Vestuario">Vestuário</option>
             <option value="Alimentos">Alimentos</option>
             <option value="Jogos">Jogos</option>
+            <option value="Casa">Casa</option>
             {/* Adicione outras opções conforme necessário */}
           </select>
         </div>

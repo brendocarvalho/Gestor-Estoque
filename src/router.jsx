@@ -20,7 +20,7 @@ const Router = createBrowserRouter([
         element: <Stock />
       },
       {
-        path: "items/:1",
+        path: "items/:itemId",
         element: <Item />
       },
       {

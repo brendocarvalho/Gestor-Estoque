@@ -13,6 +13,14 @@ export default function App () {
     return JSON.parse(libItem)
   })
 
+  function removeItem(id) {
+    setItem(state => {
+      const newState = state.filter(itemFound => itemFound.id !== id)
+      localStorage.setItem("storageItem", JSON.stringify(newState))
+      return newState
+    })
+  }
+
   const [name, setName] = useState("")
   const [quantity, setQuantity] = useState()
   const [price, setPrice] = useState()
@@ -21,7 +29,7 @@ export default function App () {
 
   return (
     <>
-      <ItemContext.Provider value={{item, setItem, name, setName, quantity, setQuantity, price, setPrice, category, setCategory, description, setDescription}}>
+      <ItemContext.Provider value={{item, setItem, name, setName, quantity, setQuantity, price, setPrice, category, setCategory, description, setDescription, removeItem}}>
         <RouterProvider router={Router} />
       </ItemContext.Provider>
     </>
