@@ -4,7 +4,7 @@ import Home from "./pages/Home"
 import Stock from "./pages/Stock"
 import Item from "./pages/Item"
 import AddItem from "./pages/AddItem"
-import EditItem from "./pages/EditItem"
+import UpdateItem from "./pages/UpdateItem"
 
 const Router = createBrowserRouter([
   {
@@ -28,8 +28,8 @@ const Router = createBrowserRouter([
         element: <AddItem />
       },
       {
-        path: "editItem/:1",
-        element: <EditItem />
+        path: "updateItem/:itemId",
+        element: <UpdateItem />
       },
     ]
   }

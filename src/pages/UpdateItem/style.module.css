@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contentInfo {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerItem {
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  align-items: flex-start;
+}
+
+form {
+  display: flex;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  gap: .5rem;
+  
+}
+
+input {
+  border: 1px solid #1c1a1d;
+  padding: 0.5rem;
+  background-color: #1c1a1d;
+  border-radius: 0.2rem;
+  width: 100%;
+}
+
+.categories > select {
+  border: 1px solid #1c1a1d;
+  padding: 0.5rem;
+  background-color: #1c1a1d;
+  border-radius: 0.2rem;
+}
+
+.description { 
+  width: 89%;
+  padding-bottom: 10px;
+}
+
+.description > textarea {
+  border: 1px solid #1c1a1d;
+  background-color: #1c1a1d;
+  border-radius: 0.2rem;
+  padding: .5rem;
+}
+
+.btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.openBtn {
+  background-color: #5BA7FD;
+  border-radius: .3rem;
+  color: #000;
+  border: 1px solid transparent;
+  transition: .3s ease-in;
+  cursor: pointer;
+  padding: .5rem 2rem;
+
+  &:hover {
+    border: 1px solid #5BA7FD;
+    background-color: transparent;
+    color: #fff;
+    transform: scale(1.1);
+  }
+}
+
+productInfo {
+  display: flex;
+  flex-direction: row;
+  padding-top: 2rem;
+  gap: 2rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container {
+  display: flex;
+  padding: 2rem 0;
+} 
+
+.productInfo {
+  display: flex;
+  gap: 1rem;
+}
+
+.productInfo span {
+  background-color: #1C1A1D;
+  border-radius: .3rem;
+  padding: .8rem 2rem;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.25);
+}
+
+.productDescription {
+  padding-top: 2rem;
+}
+
+.productDescription p {
+  background-color: #1C1A1D;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.25);
+  border-radius: .3rem;
+  padding: .8rem 2rem;
+}
+
+.productDescription span {
+  padding-right: 1.5rem;
+}

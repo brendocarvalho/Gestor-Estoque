@@ -37,7 +37,7 @@ export default function Stock() {
                     <td>
                       <div className={styles.btnControl}>
                         <OpenButton textButton="Ver" link={"items"} id={currentItem.id}/>
-                        <UpdateButton textButton="Atualizar" />
+                        <UpdateButton textButton="Atualizar" link={"updateItem"} id={currentItem.id} />
                         <RemoveButton textButton="Excluir" onClick={() => removeItem(currentItem.id)}/>
                       </div>
                     </td>

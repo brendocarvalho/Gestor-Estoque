@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 export default function Item() {
   const { itemId } = useParams();
-  const { item } = useContext(ItemContext);
+  const { item, removeItem } = useContext(ItemContext);
   const ItemFound = item.find(product => product.id === +itemId);
   const CreatedAt = ItemFound.newDateString;
   const data = new Date(CreatedAt);
@@ -27,7 +27,7 @@ export default function Item() {
         <h2 className={styles.title}>{ItemFound.name}</h2>
         <div className={styles.buttons}>
           <UpdateButton link={""} textButton={"Atualizar"} />
-          <RemoveButton link={""} textButton={"Excluir"} />
+          <RemoveButton textButton={"Excluir"} onClick={() => removeItem(ItemFound.id)}/>
         </div>
       </div>
       <div className={styles.productInfo}>
