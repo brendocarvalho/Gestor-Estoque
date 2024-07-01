@@ -5,16 +5,21 @@ import { useContext } from "react";
 import ItemContext from "../../contexts/ItemContext";
 
 export default function UpdateItem() {
-  const {item, setItem, name, setName, quantity, setQuantity, price, setPrice, category, setCategory, description, setDescription, handleClick} = useContext(ItemContext);
+  const {item, setItem, name, setName, quantity, setQuantity, price, setPrice, category, setCategory, description, setDescription, updateItem} = useContext(ItemContext);
   const { itemId } = useParams();
   const ItemFound = item.find(item => item.id === +itemId);
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    updateItem(name, quantity, price, category, description, ItemFound);
+  };
 
   return (
     <section className={style.containerItem}>
       <Navbar state="addItem" />
       <div>
         <div className={style.container}>
-          <h2 className={style.title}>Item: {ItemFound.name}</h2>
+          <h2 className={style.title}>Nome do item: {ItemFound.name}</h2>
         </div>
         <div className={style.productInfo}>
           <span>Categoria: {ItemFound.category}</span>
@@ -27,7 +32,7 @@ export default function UpdateItem() {
       </div>
 
       <div className={style.contentInfo}>
-        <form onSubmit={handleClick}>
+        <form onSubmit={handleSubmit}>
           <div className={style.name}>
             <label htmlFor="name">Nome</label>
             <input

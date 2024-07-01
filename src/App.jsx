@@ -1,4 +1,4 @@
-import { RouterProvider } from "react-router-dom";
+import { RouterProvider, useParams } from "react-router-dom";
 import Router from "./router";
 import { useState } from "react";
 import ItemContext from "./contexts/ItemContext";
@@ -30,6 +30,28 @@ export default function App () {
     })
   }
 
+  function updateItem (name, quantity, price, category, description, itemFound) {
+    const index = item.indexOf(itemFound)
+
+    if(!name.trim() || !price.trim() || !category.trim() || !description.trim()) {
+      alert("Preencha os campos corretamente.")
+      return 
+    }
+      const ItemUpdated = Object.assign(item[index], {name: name, quantity: quantity, price: price, category: category, description: description})
+      setItem((state) => {
+        const newState = [...state]
+        newState[index] = ItemUpdated
+        localStorage.setItem("storageItem", JSON.stringify(newState))
+        return newState
+      })
+      
+      setName("")
+      setQuantity("")
+      setPrice("")
+      setCategory("")
+      setDescription("")
+  }
+
   function removeItem(id) {
     setItem(state => {
       const newState = state.filter(itemFound => itemFound.id !== id)
@@ -37,8 +59,6 @@ export default function App () {
       return newState
     })
   }
-
-  
 
   function handleClick (ev){
     ev.preventDefault()
@@ -57,7 +77,7 @@ export default function App () {
 
   return (
     <>
-      <ItemContext.Provider value={{item, setItem, name, setName, quantity, setQuantity, price, setPrice, category, setCategory, description, setDescription, removeItem, createItem, handleClick}}>
+      <ItemContext.Provider value={{item, setItem, name, setName, quantity, setQuantity, price, setPrice, category, setCategory, description, setDescription, removeItem, createItem, handleClick, updateItem}}>
         <RouterProvider router={Router} />
       </ItemContext.Provider>
     </>

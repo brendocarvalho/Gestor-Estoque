@@ -73,3 +73,17 @@
 .productDescription span {
   padding-right: 1.5rem;
 }
+
+ Link{
+  border: 2px solid transparent;
+  background-color: transparent;
+  border-radius: 0;
+  transition: border-color 0.25s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+Link:hover {
+  border-bottom: 2px solid white;
+  transition: .5s;
+}
