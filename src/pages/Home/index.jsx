@@ -4,7 +4,7 @@ import { useContext } from "react";
 import ItemContext from "../../contexts/ItemContext";
 
 export default function Home() {
-  const { item, setItem } = useContext(ItemContext);
+  const { item } = useContext(ItemContext);
 
   const totalInventory = item.reduce((sum, item) => +sum + +item.quantity, 0);
   const lowQuantity = item.filter(item => item.quantity < 10);

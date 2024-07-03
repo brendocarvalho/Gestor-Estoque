@@ -6,33 +6,6 @@ import ItemContext from "../../contexts/ItemContext";
 export default function AddItem() {
   const {item, setItem, name, setName, quantity, setQuantity, price, setPrice, category, setCategory, description, setDescription, handleClick} = useContext(ItemContext)
 
-  // function createItem(name, quantity, price, description, category) {
-  //   const date = new Date();
-  //   const newDateString = date.toISOString();
-  //   const id = Math.floor(Math.random() * 10000)
-  //   const newItem = {name, quantity, price, description, id, category, newDateString}
-  //   setItem((state) => {
-  //     const newState = [newItem, ...state]
-  //     localStorage.setItem("storageItem", JSON.stringify(newState))
-  //     return newState;
-  //   })
-  // }
-
-  // function handleClick (ev){
-  //   ev.preventDefault()
-  //   if(!name.trim() || quantity <= 0 || !price.trim() || !category.trim() || !description.trim()) {
-  //     alert("Preencha os campos corretamente.")
-  //     return 
-  //   }
-
-  //   createItem(name, quantity, price, description, category)
-  //   setName("")
-  //   setQuantity("")
-  //   setPrice("")
-  //   setCategory("")
-  //   setDescription("")
-  // }
-
   return (
     <section className={style.containerItem}>
       <h1>Teste tela Add Item</h1>
