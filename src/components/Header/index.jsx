@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <section className={style.container}>
       <p>
-        <strong>REACT STOCK</strong>
+        <strong>GESTOR STOCK</strong>
       </p>
       <nav className={style.navbar}>
         <Link to="/">
