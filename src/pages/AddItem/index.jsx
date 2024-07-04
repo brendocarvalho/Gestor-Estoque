@@ -4,7 +4,7 @@ import style from "./style.module.css";
 import ItemContext from "../../contexts/ItemContext";
 
 export default function AddItem() {
-  const {item, setItem, name, setName, quantity, setQuantity, price, setPrice, category, setCategory, description, setDescription, handleClick} = useContext(ItemContext)
+  const {name, setName, quantity, setQuantity, price, setPrice, category, setCategory, description, setDescription, handleClick} = useContext(ItemContext)
 
   return (
     <section className={style.containerItem}>

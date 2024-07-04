@@ -53,7 +53,7 @@ export default function Item() {
       <div className={styles.productDescription}>
         <p>Descrição: {ItemFound.description}</p>
         <span>Cadastrado em: {dataFormatada}</span>
-        <span>Atualizado em: </span>
+        <span>Atualizado em: {ItemFound.updatedAt}</span>
       </div>
     </section>
   );

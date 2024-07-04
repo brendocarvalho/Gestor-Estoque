@@ -32,12 +32,20 @@ export default function App () {
 
   function updateItem (name, quantity, price, category, description, itemFound) {
     const index = item.indexOf(itemFound)
+    const updatedAt = new Date()
+
+    const dia = updatedAt.getDate().toString().padStart(2, "0");
+    const mes = (updatedAt.getMonth() + 1).toString().padStart(2, "0"); // Mês começa do zero
+    const ano = updatedAt.getFullYear();
+    const hora = updatedAt.getHours().toString().padStart(2, "0");
+    const minuto = updatedAt.getMinutes().toString().padStart(2, "0");
+    const dataFormatada = `${dia}/${mes}/${ano} ${hora}:${minuto}`;
 
     if(!name.trim() || !price.trim() || !category.trim() || !description.trim()) {
       alert("Preencha os campos corretamente.")
       return 
     }
-      const ItemUpdated = Object.assign(item[index], {name: name, quantity: quantity, price: price, category: category, description: description})
+      const ItemUpdated = Object.assign(item[index], {name: name, quantity: quantity, price: price, category: category, description: description, updatedAt: dataFormatada})
       setItem((state) => {
         const newState = [...state]
         newState[index] = ItemUpdated
