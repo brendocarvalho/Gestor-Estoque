@@ -61,11 +61,17 @@ export default function App () {
   }
 
   function removeItem(id) {
-    setItem(state => {
-      const newState = state.filter(itemFound => itemFound.id !== id)
-      localStorage.setItem("storageItem", JSON.stringify(newState))
-      return newState
-    })
+    let confirmation = confirm("Deseja realmente excluir este item?")
+    if(confirmation) {
+      setItem(state => {
+        const newState = state.filter(itemFound => itemFound.id !== id)
+        localStorage.setItem("storageItem", JSON.stringify(newState))
+        return newState
+      })
+      alert("Item removido com sucesso!")
+    } else {
+      alert("Exclusão não realizada!")
+    }
   }
 
   function handleClick (ev){
@@ -76,6 +82,7 @@ export default function App () {
     }
 
     createItem(name, quantity, price, description, category)
+    alert("Item cadastrado com sucesso!")
     setName("")
     setQuantity("")
     setPrice("")

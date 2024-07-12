@@ -3,21 +3,29 @@ import Navbar from "../../components/Navbar";
 import style from "./style.module.css";
 import { useContext } from "react";
 import ItemContext from "../../contexts/ItemContext";
+import Form from "../../components/Form";
 
 export default function UpdateItem() {
-  const {item, setItem, name, setName, quantity, setQuantity, price, setPrice, category, setCategory, description, setDescription, updateItem} = useContext(ItemContext);
+  const { item, name, quantity, price, category, description, updateItem } = useContext(ItemContext);
   const { itemId } = useParams();
   const ItemFound = item.find(item => item.id === +itemId);
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    updateItem(name, quantity, price, category, description, ItemFound);
+    let confirmation = confirm("Deseja realmente atualizar o ítem?");
+    if (confirmation) {
+      updateItem(name, quantity, price, category, description, ItemFound);
+      alert("Item atualizado com sucesso!");
+    }
+    else {
+      alert(`Itém ${ItemFound.name} não atualizado!`)
+    }
   };
 
   return (
     <section className={style.containerItem}>
       <Navbar state="addItem" />
-      <div>
+      <div className={style.divContent}>
         <div className={style.container}>
           <h2 className={style.title}>Nome do item: {ItemFound.name}</h2>
         </div>
@@ -30,73 +38,7 @@ export default function UpdateItem() {
           <p>Descrição: {ItemFound.description}</p>
         </div>
       </div>
-
-      <div className={style.contentInfo}>
-        <form onSubmit={handleSubmit}>
-          <div className={style.name}>
-            <label htmlFor="name">Nome</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              value={name}
-              onChange={ev => setName(ev.target.value)}
-            />
-          </div>
-          <div className={style.quantities}>
-            <label htmlFor="number">Quantidade</label>
-            <input
-              type="number"
-              name="number"
-              id="number"
-              value={quantity}
-              onChange={ev => setQuantity(ev.target.value)}
-            />
-          </div>
-          <div className={style.price}>
-            <label htmlFor="price">Preço</label>
-            <input
-              type="number"
-              name="price"
-              id="price"
-              value={price}
-              onChange={ev => setPrice(ev.target.value)}
-            />
-          </div>
-          <div className={style.categories}>
-            <label htmlFor="categories">Categoria</label>
-            <select
-              name="categories"
-              id="categories"
-              value={category} // Valor selecionado do select
-              onChange={ev => setCategory(ev.target.value)} // Atualiza o estado da categoria
-            >
-              <option disabled value="">
-                Selecione uma categoria
-              </option>
-              <option value="Eletronicos">Eletrônicos</option>
-              <option value="Vestuario">Vestuário</option>
-              <option value="Alimentos">Alimentos</option>
-              <option value="Jogos">Jogos</option>
-              <option value="Casa">Casa</option>
-              {/* Adicione outras opções conforme necessário */}
-            </select>
-          </div>
-          <div className={style.description}>
-            <label htmlFor="description">Descrição</label>
-            <textarea
-              name="description"
-              id="description"
-              value={description}
-              onChange={ev => setDescription(ev.target.value)}></textarea>
-          </div>
-          <div className={style.btn}>
-            <button type="submit" className={style.openBtn}>
-              Salvar
-            </button>
-          </div>
-        </form>
-      </div>
+      <Form handleFunction={handleSubmit} />
     </section>
   );
 }
