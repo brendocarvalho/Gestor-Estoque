@@ -3,18 +3,7 @@ import ItemContext from "../../contexts/ItemContext";
 import style from "./style.module.css";
 
 export default function Form({ handleFunction }) {
-  const {
-    name,
-    setName,
-    quantity,
-    setQuantity,
-    price,
-    setPrice,
-    category,
-    setCategory,
-    description,
-    setDescription,
-  } = useContext(ItemContext);
+  const { name,setName,quantity,setQuantity,price,setPrice,category,setCategory,description,setDescription } = useContext(ItemContext);
 
   return (
     <section className={style.contentForm}>
