@@ -1,7 +1,7 @@
-import style from "./style.module.css";
-import UpdateButton from "../../components/Buttons/UpdateButton";
 import { useContext } from "react";
+import UpdateButton from "../../components/Buttons/UpdateButton";
 import ItemContext from "../../contexts/ItemContext";
+import style from "./style.module.css";
 
 export default function Home() {
   const { item } = useContext(ItemContext);
@@ -54,7 +54,11 @@ export default function Home() {
                     <tr key={item.id}>
                       <td>{item.name}</td>
                       <td>
-                        <UpdateButton textButton={"Ver"} link={"items"} id={item.id} />
+                        <UpdateButton
+                          textButton={"Ver"}
+                          link={"items"}
+                          id={item.id}
+                        />
                       </td>
                     </tr>
                   ))
@@ -83,7 +87,11 @@ export default function Home() {
                       <td>{item.name}</td>
                       <td>{item.quantity}</td>
                       <td>
-                        <UpdateButton textButton={"Ver"} link={"items"} id={item.id} />
+                        <UpdateButton
+                          textButton={"Ver"}
+                          link={"items"}
+                          id={item.id}
+                        />
                       </td>
                     </tr>
                   ))

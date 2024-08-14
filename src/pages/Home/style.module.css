@@ -1,28 +1,7 @@
-* {
-  color: #fff;
-  background-color: #2C2C2D;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-body {
-  overflow-x: hidden;
-}
-
 .title {
   padding: 0 0 1rem 1rem;
   font-weight: 300;
   font-size: 3rem;
-}
-
-main {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-top: 1rem;
 }
 
 .dashContent {
@@ -34,7 +13,7 @@ main {
 }
 
 .dash {
-  background-color: #1C1A1D;
+  background-color: #1c1a1d;
   width: 25%;
   height: 145px;
   text-align: center;
@@ -42,7 +21,7 @@ main {
   flex-direction: column;
   justify-content: start;
   padding: 1rem;
-  box-shadow: 1px 1px 6px #1C1A1D;
+  box-shadow: 1px 1px 6px #1c1a1d;
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -53,19 +32,19 @@ main {
 }
 
 table {
-  border-collapse:  collapse;
+  border-collapse: collapse;
   margin-top: 2rem;
   width: 100%;
 }
 
 thead {
-  background-color: #1C1A1D;
+  background-color: #1c1a1d;
   box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.25);
   text-align: left;
 }
 
 .row table thead tr th {
-  background-color: #1C1A1D;
+  background-color: #1c1a1d;
   text-align: left;
 }
 
@@ -77,15 +56,10 @@ thead {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  height: 100vh;
 }
 
 .row div {
   flex: 1 0 16rem;
-}
-
-.rowTitle {
-  height: 100vh;
 }
 
 .container {

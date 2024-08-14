@@ -1,15 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .contentForm {
   display: flex;
   width: 100%;
-  height: 70vh;
-  align-items: center;
   justify-content: center;
+}
+
+form > div {
 }
 
 input {
@@ -17,7 +12,8 @@ input {
   padding: 0.5rem;
   background-color: #1c1a1d;
   border-radius: 0.2rem;
-  width: 100%;
+  width: 20%;
+  box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.313);
 }
 
 .categories > select {
@@ -25,10 +21,11 @@ input {
   padding: 0.5rem;
   background-color: #1c1a1d;
   border-radius: 0.2rem;
+  box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.313);
 }
 
-.description { 
-  width: 89%;
+.description {
+  width: 80%;
   padding-bottom: 10px;
 }
 
@@ -36,7 +33,8 @@ input {
   border: 1px solid #1c1a1d;
   background-color: #1c1a1d;
   border-radius: 0.2rem;
-  padding: .5rem;
+  padding: 2rem;
+  box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.313);
 }
 
 .btn {
@@ -46,16 +44,16 @@ input {
 }
 
 .openBtn {
-  background-color: #5BA7FD;
-  border-radius: .3rem;
+  background-color: #5ba7fd;
+  border-radius: 0.3rem;
   color: #000;
   border: 1px solid transparent;
-  transition: .3s ease-in;
+  transition: 0.3s ease-in;
   cursor: pointer;
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
 
   &:hover {
-    border: 1px solid #5BA7FD;
+    border: 1px solid #5ba7fd;
     background-color: transparent;
     color: #fff;
     transform: scale(1.1);

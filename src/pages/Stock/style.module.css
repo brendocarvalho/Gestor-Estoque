@@ -5,15 +5,11 @@ section {
 h1 {
   font-size: 50px;
   font-weight: 300;
-  padding: 0 0 1rem 0
+  padding: 0 0 1rem 0;
 }
 
 hr {
   margin-top: 1rem;
-}
-
-.tableItens {
-  height: 100vh;
 }
 
 table {
@@ -23,7 +19,7 @@ table {
 
 thead {
   width: 100%;
-  background-color: #1C1A1D;
+  background-color: #1c1a1d;
 }
 
 tr {
@@ -34,14 +30,14 @@ tr {
 th,
 td {
   display: table-cell;
-  padding: 16px; 
+  padding: 16px;
   text-align: center;
 }
 
 th {
   font-weight: bold;
   text-align: center; /* Alinha o texto à esquerda */
-  background-color: #1C1A1D;
+  background-color: #1c1a1d;
 }
 
 .btnControl {
