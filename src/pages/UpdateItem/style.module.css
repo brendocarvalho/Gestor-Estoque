@@ -1,15 +1,13 @@
-.containerItem {
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-input {
+/* input {
   border: 1px solid #1c1a1d;
   padding: 0.5rem;
   background-color: #1c1a1d;
   border-radius: 0.2rem;
   width: 100%;
+}
+
+.divContent {
+  height: 100vh;
 }
 
 .categories > select {
@@ -20,7 +18,6 @@ input {
 }
 
 .description {
-  width: 89%;
   padding-bottom: 10px;
 }
 
@@ -54,13 +51,6 @@ input {
   }
 }
 
-productInfo {
-  display: flex;
-  flex-direction: row;
-  padding-top: 2rem;
-  gap: 2rem;
-}
-
 .info {
   display: flex;
   flex-direction: column;
@@ -86,6 +76,7 @@ productInfo {
 
 .productDescription {
   padding-top: 2rem;
+  display: flex;
 }
 
 .productDescription p {
@@ -97,4 +88,4 @@ productInfo {
 
 .productDescription span {
   padding-right: 1.5rem;
-}
+} */

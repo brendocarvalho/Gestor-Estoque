@@ -1,21 +1,17 @@
 import { useContext } from "react";
 import ItemContext from "../../contexts/ItemContext";
-import style from "./style.module.css";
+import style from "./index.module.css";
 
-export default function Form({ handleFunction }) {
-  const {
-    name,
-    setName,
-    quantity,
-    setQuantity,
-    price,
-    setPrice,
-    category,
-    setCategory,
-    description,
-    setDescription,
-  } = useContext(ItemContext);
-
+export default function FormToUpdate({
+  handleFunction,
+  name,
+  quantity,
+  price,
+  category,
+  description,
+}) {
+  const { setName, setQuantity, setPrice, setCategory, setDescription } =
+    useContext(ItemContext);
   return (
     <section className={style.contentForm}>
       <form onSubmit={handleFunction}>

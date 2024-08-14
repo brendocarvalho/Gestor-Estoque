@@ -51,9 +51,12 @@ export default function App() {
 
     if (
       !name.trim() ||
-      !price.trim() ||
       !category.trim() ||
-      !description.trim()
+      !description.trim() ||
+      price === "" ||
+      price === 0 ||
+      quantity === "" ||
+      quantity === 0
     ) {
       alert("Preencha os campos corretamente.");
       return;
@@ -99,8 +102,8 @@ export default function App() {
     if (
       !name.trim() ||
       quantity <= 0 ||
-      !price.trim() ||
-      !category.trim() ||
+      !price ||
+      !category ||
       !description.trim()
     ) {
       alert("Preencha os campos corretamente.");
