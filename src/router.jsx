@@ -1,38 +1,49 @@
-import {createBrowserRouter} from "react-router-dom"
-import RootLayout from "./pages/RootLayout"
-import Home from "./pages/Home"
-import Stock from "./pages/Stock"
-import Item from "./pages/Item"
-import AddItem from "./pages/AddItem"
-import UpdateItem from "./pages/UpdateItem"
+import { createBrowserRouter } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute";
+import AddItem from "./pages/AddItem";
+import Cadastro from "./pages/Cadastro";
+import Home from "./pages/Home";
+import Item from "./pages/Item";
+import Login from "./pages/Login";
+import RootLayout from "./pages/RootLayout";
+import Stock from "./pages/Stock";
+import UpdateItem from "./pages/UpdateItem";
 
 const Router = createBrowserRouter([
   {
     path: "/",
-    element: <RootLayout />,
+    element: <ProtectedRoute element={<RootLayout />} />,
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "stock",
-        element: <Stock />
+        element: <Stock />,
       },
       {
         path: "items/:itemId",
-        element: <Item />
+        element: <Item />,
       },
       {
         path: "addItem",
-        element: <AddItem />
+        element: <AddItem />,
       },
       {
         path: "updateItem/:itemId",
-        element: <UpdateItem />
+        element: <UpdateItem />,
       },
-    ]
-  }
-])
+    ],
+  },
+  {
+    path: "/cadastro",
+    element: <Cadastro />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+]);
 
 export default Router;

@@ -70,19 +70,13 @@ input {
   padding: .5rem;
 } */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 h1 {
   align-self: flex-start;
 }
 
 .containerItem {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -101,7 +95,7 @@ form > div {
   display: flex;
   flex-direction: column;
   width: 20%;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 input {
@@ -119,7 +113,7 @@ input {
   border-radius: 0.2rem;
 }
 
-.description { 
+.description {
   width: 89%;
   padding-bottom: 10px;
 }
@@ -128,7 +122,7 @@ input {
   border: 1px solid #1c1a1d;
   background-color: #1c1a1d;
   border-radius: 0.2rem;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .btn {
@@ -138,16 +132,16 @@ input {
 }
 
 .openBtn {
-  background-color: #5BA7FD;
-  border-radius: .3rem;
+  background-color: #5ba7fd;
+  border-radius: 0.3rem;
   color: #000;
   border: 1px solid transparent;
-  transition: .3s ease-in;
+  transition: 0.3s ease-in;
   cursor: pointer;
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
 
   &:hover {
-    border: 1px solid #5BA7FD;
+    border: 1px solid #5ba7fd;
     background-color: transparent;
     color: #fff;
     transform: scale(1.1);
