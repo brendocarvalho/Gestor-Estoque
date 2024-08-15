@@ -4,17 +4,22 @@ import { UserContext } from "../../contexts/UserContext";
 import styles from "./index.module.css";
 
 export default function Login() {
-  const { email, setEmail, password, setPassword, users, login, logOut } =
+  const { email, setEmail, password, setPassword, users, login } =
     useContext(UserContext);
+
+  //state apenas para gerenciar erros
   const [error, setError] = useState("");
+  //hook para navegar entre as páginas e realizar redirects
   const navigate = useNavigate();
 
   function handleLogin(ev) {
     ev.preventDefault();
+    //Verifica se o email e senha estão corretos
     const userVerification = users.find(
       (user) => user.email === email && user.password === password
     );
 
+    //Se o metodo find retornar o objeto então vamos chamar a função login() para setar o state isAuth para true e redirecionamos para a tela de home e limpamos os campos
     if (userVerification) {
       login();
       alert("Login realizado com sucesso!");

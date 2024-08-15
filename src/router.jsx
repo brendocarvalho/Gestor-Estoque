@@ -12,7 +12,7 @@ import UpdateItem from "./pages/UpdateItem";
 const Router = createBrowserRouter([
   {
     path: "/",
-    element: <ProtectedRoute element={<RootLayout />} />,
+    element: <ProtectedRoute element={<RootLayout />} />, //Rota protegida que será carregada apenas se o login for realizado. Comportamento do componente protetor mais detalhado em components/ProtectedRoute
     children: [
       {
         index: true,

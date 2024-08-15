@@ -30,18 +30,21 @@ export default function () {
       return;
     }
 
+    //Valida se o username já existe
     const validateUsername = users.find((user) => user.username === username);
     if (validateUsername) {
       setError("O username informado já está sendo usado por outro usuário!");
       return;
     }
 
+    //Valida se o email já existe
     const validateEmail = users.find((user) => user.email === email);
     if (validateEmail) {
       setError("Este e-mail já está sendo usado por outro usuário!");
       return;
     }
 
+    //Valida a senha
     const isValidPassword = validatePassword(password);
     if (!isValidPassword) {
       setError("A senha deve conter pelo menos 8 caracteres, letras e números");

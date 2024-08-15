@@ -24,7 +24,6 @@ export default function UpdateItem() {
   const handleSubmit = (ev) => {
     ev.preventDefault();
     updateItem(name, quantity, price, category, description, ItemFound);
-    alert("Item atualizado com sucesso!");
   };
 
   useEffect(() => {

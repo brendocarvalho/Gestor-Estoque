@@ -6,12 +6,15 @@ export default function UserContextProvider({ children }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  //state para armazenar os users
   const [users, setUsers] = useState(() => {
     const searchUsers = localStorage.getItem("users");
     if (!searchUsers) return [];
     return JSON.parse(searchUsers);
   });
 
+  //state para verificar o valor de isAuth na sessionStorage do navegador, caso seja true libera o acesso para a rota "/"
   const [isAuth, setIsAuth] = useState(() => {
     const isLogged = sessionStorage.getItem("isAuth");
     return isLogged === "true";
@@ -19,12 +22,13 @@ export default function UserContextProvider({ children }) {
 
   // Atualiza o sessionStorage quando isAuth muda
   useEffect(() => {
-    sessionStorage.setItem("isAuth", [isAuth]);
+    sessionStorage.setItem("isAuth", isAuth ? "true" : "false");
   }, [isAuth]);
 
-  const login = () => setIsAuth(true);
-  const logOut = () => setIsAuth(false);
+  const login = () => setIsAuth(true); //Seta o state para true quando o login é bem sucedido!
+  const logOut = () => setIsAuth(false); //Seta o state para false quando é realizado o LogOut
 
+  //Cria o usuário
   function createUser(username, email, password) {
     const id = Math.floor(Math.random() * 1000);
     const newUser = { id, username, email, password };

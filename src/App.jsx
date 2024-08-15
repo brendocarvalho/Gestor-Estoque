@@ -51,12 +51,11 @@ export default function App() {
 
     if (
       !name.trim() ||
-      !category.trim() ||
+      !category ||
       !description.trim() ||
-      price === "" ||
-      price === 0 ||
-      quantity === "" ||
-      quantity === 0
+      isNaN(Number(price)) ||
+      Number(price) <= 0 ||
+      quantity <= 0
     ) {
       alert("Preencha os campos corretamente.");
       return;
@@ -69,6 +68,7 @@ export default function App() {
       description: description,
       updatedAt: dataFormatada,
     });
+
     setItem((state) => {
       const newState = [...state];
       newState[index] = ItemUpdated;
@@ -76,6 +76,7 @@ export default function App() {
       return newState;
     });
 
+    alert("Item atualizado com sucesso!");
     setName("");
     setQuantity("");
     setPrice("");
